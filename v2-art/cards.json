@@ -1,0 +1,247 @@
+[
+  {
+    "key": "art-style-history",
+    "category": "art",
+    "name": "四种平面设计传统",
+    "english": "Art Nouveau · Art Deco · Bauhaus · Swiss Style",
+    "board": "history.png",
+    "panels": [
+      [
+        "新艺术 Art Nouveau",
+        "有机花叶、长而流动的曲线，边框和图形交织。"
+      ],
+      [
+        "装饰艺术 Art Deco",
+        "阶梯轮廓、放射线、几何秩序与金属色，视觉显得利落华丽。"
+      ],
+      [
+        "包豪斯启发 Bauhaus-inspired",
+        "把主体约化为圆、矩形、三角，强调几何构成与结构清楚。"
+      ],
+      [
+        "瑞士国际主义排版 Swiss Style",
+        "不对称网格、无衬线标题、精确对齐和克制的图文关系。"
+      ]
+    ],
+    "look": "同一虚构茶壶展览，四种设计语言分别在形状、装饰密度、字体与组织关系上有明显区别。",
+    "use": "把画风需求拆为可描述的形状、线条、版式、色彩、材质和节奏。选择风格时先考虑内容与使用环境。",
+    "distinction": "新艺术常以有机曲线形成装饰，Art Deco 常用更几何化的现代形态。包豪斯是设计教育与实践运动，瑞士风格强调网格与清楚的信息编排，均有更丰富的历史变体。",
+    "scenario": "历史题材海报、展陈视觉、文化品牌的风格探索。工程培训和竞赛答辩可以借鉴现代主义构成与网格秩序。",
+    "practice": "给同一主题制作四张封面，固定信息和文字，只改变符号形式及版式。分别说出第一眼为什么注意标题或主体。",
+    "prompt": "以同一茶壶展览为主题做四版海报。分别采用新艺术、有几何阶梯轮廓与放射纹的 Art Deco、包豪斯启发的几何构成、瑞士国际主义排版。保持主题一致，每版突出其线条、版式和字体特征，文字可读，原创设计。",
+    "sources": [
+      {
+        "title": "V&A · Art Nouveau – an international style",
+        "url": "https://www.vam.ac.uk/articles/art-nouveau-an-international-style",
+        "note": "实读各国作品与自然形态、流动线及装饰整合。"
+      },
+      {
+        "title": "V&A · Art Deco printmakers",
+        "url": "https://www.vam.ac.uk/articles/art-deco-printmakers",
+        "note": "实读几何构成与 sunburst 海报实例。"
+      },
+      {
+        "title": "Herbert Bayer / MoMA · Architektur Lichtbilder Vortrag Professor Hans Poelzig (1926)",
+        "url": "https://www.moma.org/collection/works/5101",
+        "note": "实读包豪斯印刷与现代字体实践，查看原作品记录。"
+      },
+      {
+        "title": "V&A · A short history of the poster",
+        "url": "https://www.vam.ac.uk/articles/a-short-history-of-the-poster",
+        "note": "实读海报发展及瑞士国际主义排版的简洁几何字形。"
+      }
+    ]
+  },
+  {
+    "key": "art-media",
+    "category": "art",
+    "name": "扁平、手绘、像素与黏土感",
+    "english": "Flat illustration · Gouache · Pixel art · Clay-like 3D",
+    "board": "styles.png",
+    "panels": [
+      [
+        "扁平插画 Flat illustration",
+        "几何色块、清晰轮廓、弱化真实体积，适合快速识别。"
+      ],
+      [
+        "水粉风 Gouache-inspired",
+        "不透明色层和可见笔触。样张以手绘质感为重点，无法单凭生成画面判定真实颜料。"
+      ],
+      [
+        "像素艺术 Pixel art",
+        "离散方格、有限色板和有规律的阶梯边缘。"
+      ],
+      [
+        "黏土感三维 Clay-like 3D",
+        "圆润体积、亚光材质、接触阴影和一致空间光照。"
+      ]
+    ],
+    "look": "小机器人照料植物，主体、动作相同，笔触、轮廓、色块、立体程度各异。",
+    "use": "为知识漫画、角色、海报和互动模型选择合适的表现媒介，控制视觉复杂度。",
+    "distinction": "扁平画法仍可有少量阴影；黏土感来自空间体积及表面反射。真正的像素作品用格点组织形状，简单把照片放大成马赛克会缺少这一特征。",
+    "scenario": "扁平适合解释图、软件插画，水粉适合故事和治愈内容，像素适合复古游戏及轻量小动画，黏土三维适合亲切的产品及角色展示。",
+    "practice": "选一个你常用的教学角色，分别描述轮廓、细节、笔触、色板和光影，先保证角色动作与可辨识性一致，再改变表现媒介。",
+    "prompt": "同一蓝橙小机器人在同一桌面给绿植浇水，同机位同姿势，分别做扁平几何插画、不透明水粉笔触、有限色板的清晰像素格、亚光圆润黏土感 3D。保持角色身份和关键信息一致，四幅各自完整。",
+    "sources": [
+      {
+        "title": "Brian Wood / Adobe Learn · Create a flat illustration",
+        "url": "https://www.adobe.com/learn/illustrator/in-app/create-a-fun-flat-lay-illustration",
+        "note": "实读结合几何形与有机线条的教程步骤。"
+      },
+      {
+        "title": "MoMA · Gouache",
+        "url": "https://www.moma.org/collection/terms/gouache",
+        "note": "实读水粉的水性、不透明、亚光性质和馆藏作品入口。"
+      },
+      {
+        "title": "Adobe · How to make pixel art",
+        "url": "https://www.adobe.com/uk/products/firefly/discover/how-to-make-pixel-art.html",
+        "note": "实读小画布、剪影、色板和整数倍缩放；这里的生成示例为像素风图像。"
+      },
+      {
+        "title": "Adobe Substance 3D Designer · Material properties",
+        "url": "https://experienceleague.adobe.com/en/docs/substance-3d-designer/using/workspace/3d-view/material-properties",
+        "note": "实读 OpenPBR 的 Base Color、Diffuse roughness 和 Specular roughness 表格。"
+      }
+    ]
+  },
+  {
+    "key": "light-style",
+    "category": "art",
+    "name": "柔光、硬光、高调与低调",
+    "english": "Soft light · Hard light · High-key · Low-key",
+    "board": "lighting.png",
+    "panels": [
+      [
+        "柔光 Soft light",
+        "阴影边缘更宽、更柔，物体受光过渡平滑。"
+      ],
+      [
+        "硬光 Hard light",
+        "物体投影和明暗交界更清晰，纹理与方向突出。"
+      ],
+      [
+        "高调 High-key",
+        "主要面积保持浅色明亮，阴影仍有纹理。"
+      ],
+      [
+        "低调 Low-key",
+        "大面积暗部保留，受控亮部突出瓶身边缘。"
+      ]
+    ],
+    "look": "观察花瓶轮廓、桌面投影和背墙。上排比较光源形成的阴影边缘，下排比较整体影调分布。",
+    "use": "决定作品的气氛、立体感和重点可见性。光线方向也能引导观众阅读材质和形状。",
+    "distinction": "硬柔是光质，取决于相对光源大小等条件；高低调是画面主要明暗分布。柔光也能拍成低调，硬光也可以构成高调。不应通过丢失所有暗部或高光细节来实现影调。",
+    "scenario": "产品商业图、三维模型渲染、海报摄影、科普漫画和教学录像。强调零件纹理时试侧向硬光；讲解画面需要看得清时试柔光与补光。",
+    "practice": "在桌面放杯子和水果，使用同一机位。先用直射小灯，再用大型柔光面，比较阴影过渡。接着调整背景及补光，分别做整体高调和低调。",
+    "prompt": "固定陶瓶、枝叶、水果、桌面、角度与构图，分别用大面积扩散主光、小面积定向侧光、亮背景柔和补光的高调与暗背景受控轮廓光的低调。保留受光面的纹理，以真实阴影边缘表达差别。",
+    "sources": [
+      {
+        "title": "Adobe · Portrait lighting",
+        "url": "https://www.adobe.com/uk/creativecloud/photography/discover/portrait-lighting.html",
+        "note": "实读 hard 与 soft light 的对比和漫射概念。"
+      },
+      {
+        "title": "Adobe Lightroom Academy · Love the Light",
+        "url": "https://lightroom.adobe.com/academy/genres/food/love-the-light",
+        "note": "课程静物练习、方向、投影边缘示例。"
+      },
+      {
+        "title": "Adobe · Histogram in photography",
+        "url": "https://www.adobe.com/au/creativecloud/photography/discover/how-to-read-a-histogram.html",
+        "note": "实读高低调与信息裁切的区别。"
+      }
+    ]
+  },
+  {
+    "key": "palette-harmony",
+    "category": "art",
+    "name": "邻近色、互补色、单色与强调色",
+    "english": "Analogous · Complementary · Monochromatic · Accent color",
+    "board": "palette.png",
+    "panels": [
+      [
+        "邻近色 Analogous",
+        "绿、青、蓝相邻色群，形成连贯和统一的整体。"
+      ],
+      [
+        "互补色 Complementary",
+        "蓝与橙形成清晰的冷暖对抗。"
+      ],
+      [
+        "单色 Monochromatic",
+        "酒红到粉红的深浅层次由同一色相家族建立。"
+      ],
+      [
+        "中性色＋强调色 Accent",
+        "灰、米白与黑让小面积亮绿色旋钮成为焦点。"
+      ]
+    ],
+    "look": "同一桌灯环境保持相近的布局和材质，只改换整体色系与小面积色彩重点。",
+    "use": "让作品颜色有分工。主体色建立统一气质，辅助色分层，强调色将视线导向操作入口或重点。",
+    "distinction": "色相关系决定颜色相邻或相对。明度、饱和度、面积也影响对比；互补色组合本身不能确保文字读起来足够清楚。",
+    "scenario": "PPT主视觉、产品站主题、角色配色、UI状态和数据图表。大面积邻近色适合统一主题，小面积对比色适合强调。",
+    "practice": "给同一张卡片试四种色系，始终保留同样文字、图标和结构。先眯眼观察第一眼焦点，再检查正文与背景的可读性。",
+    "prompt": "同一内容、相同构图和材质，制作邻近青绿到蓝色、互补深蓝与橙色、单一酒红色相不同明度、中性灰米色搭配一个小面积亮绿强调色四版。说明主色、辅色和强调色承担的作用。",
+    "sources": [
+      {
+        "title": "Adobe · Colour Wheel Combinations",
+        "url": "https://www.adobe.com/uk/creativecloud/design/discover/color-wheel.html",
+        "note": "实读相邻、相对、单色的色轮关系和示例。"
+      },
+      {
+        "title": "Adobe · Colour Theory Guide",
+        "url": "https://www.adobe.com/uk/creativecloud/design/discover/color-theory.html",
+        "note": "实读平面设计的配色协调和中性色加突出色。"
+      }
+    ]
+  },
+  {
+    "key": "composition-balance",
+    "category": "art",
+    "name": "对称、三分构图与负空间",
+    "english": "Symmetry · Rule of thirds · Negative space",
+    "board": "composition.png",
+    "panels": [
+      [
+        "中心轴与近似对称 Symmetry",
+        "灯和墙面线条构成中心视觉轴，两侧物件不同但整体重量近似平衡。"
+      ],
+      [
+        "三分构图参考 Rule of thirds",
+        "主体位于左侧区域，右侧保留宽阔环境和文案空间。"
+      ],
+      [
+        "竞争式构图 Visual clutter",
+        "许多相似大小、对比的物件争抢注意力。"
+      ],
+      [
+        "负空间 Negative space",
+        "主要物件成组，周围保持安静的空域，主体更容易识别。"
+      ]
+    ],
+    "look": "看台灯位置、竖向轴线以及周围物体的数量和占比。尝试用三秒指出画面的主要对象。",
+    "use": "决定第一眼看向哪里，以及何处可以放标题、字幕、信息或留出呼吸。",
+    "distinction": "三分法是构图参考，主体可以放在网格附近。对称构图追求视觉重量的平衡。负空间是有意安排的空域，与标题、主体和其他对象的关系有关。",
+    "scenario": "课程封面、产品首屏、宣传海报、镜头画幅、个人作品集。标题需要大空间时优先规划一侧负空间。",
+    "practice": "固定一个台灯，分别拍中心和偏侧位置。再从同一偏侧构图移走几件竞争物体，观察读者更快注意到什么。",
+    "prompt": "同一红色台灯和现代工作台，做中心轴对称、三分位置偏侧、多个同权重物件的拥挤版、少数物件聚合并预留整块标题区的负空间版。保持相近透视和光线，突出视觉重量与信息位置。",
+    "sources": [
+      {
+        "title": "Adobe · Less is more: A guide to minimalist photography",
+        "url": "https://www.adobe.com/creativecloud/photography/type/minimalist-photography.html",
+        "note": "实读主体、减法构图和三分网格为参考的教学。"
+      },
+      {
+        "title": "Adobe · What is emphasis in photography?",
+        "url": "https://www.adobe.com/creativecloud/photography/discover/emphasis-in-photography.html",
+        "note": "实读主体强调、三分构图与负空间。"
+      },
+      {
+        "title": "Lightroom Academy · Embrace Symmetry & Balance",
+        "url": "https://lightroom.adobe.com/academy/principles/composition/symmetry",
+        "note": "核对课程的对称、非对称和视觉配重案例说明。"
+      }
+    ]
+  }
+]

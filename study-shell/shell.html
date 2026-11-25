@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>视觉与专业术语图鉴</title>
+<style>
+:root {
+  --paper: #f4f1e9;
+  --card: #fcfaf5;
+  --ink: #101a2c;
+  --muted: #465260;
+  --rule: #d4d1c6;
+  --teal: #06665a;
+  --teal-soft: #d9eee3;
+  --hero: #102238;
+  --light: #eaf8f0;
+  font-family: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+body { margin: 0; }
+img { max-width: 100%; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: var(--teal); text-underline-offset: .2em; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid #0b7c6e; outline-offset: 4px; }
+[hidden] { display: none !important; }
+h1, h2, h3, p, figure { margin: 0; }
+.frame { width: min(1280px, calc(100% - 96px)); margin-inline: auto; }
+.skip { position: absolute; left: -100vw; }
+.skip:focus { z-index: 5; top: .6rem; left: .6rem; padding: .55rem 1rem; background: #fff; }
+.masthead { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 76px; border-bottom: 1px solid var(--rule); }
+.masthead__mark { display: flex; align-items: center; gap: .75rem; color: var(--ink); text-decoration: none; font-weight: 720; }
+.masthead__mark::before { display: block; width: 26px; height: 25px; content: ""; border: 1.5px solid var(--teal); border-radius: 3px; background: linear-gradient(90deg, transparent 45%, var(--teal) 45% 53%, transparent 53%); }
+.masthead nav { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; }
+.masthead nav a { color: var(--muted); text-decoration: none; font-size: .91rem; }
+.masthead nav a:hover { color: var(--teal); text-decoration: underline; }
+.hero { display: grid; grid-template-columns: 1.18fr .94fr; align-items: center; gap: clamp(28px, 5vw, 78px); padding-block: clamp(58px, 8vw, 110px) clamp(56px, 7vw, 94px); }
+.hero__copy h1 { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: clamp(2.7rem, 5.9vw, 5.5rem); font-weight: 850; line-height: 1.18; letter-spacing: -.075em; text-wrap: balance; }
+.hero__copy h1 span { display: inline-block; }
+.hero__summary { margin-top: 1.15rem; font-size: clamp(1.08rem, 1.45vw, 1.32rem); color: var(--muted); line-height: 1.8; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: .75rem 1.2rem; align-items: center; margin-top: 1.65rem; }
+.primary, .secondary, .filter, .copy-prompt, #clear-filters { min-height: 43px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border-radius: 6px; }
+.primary { background: var(--teal); color: #fff; padding: .6rem 1rem; font-weight: 720; gap: .62rem; }
+.primary::after { content: "↓"; }
+.primary:hover { color: #fff; background: #004c43; }
+.secondary { font-weight: 680; padding-inline: .05rem; }
+.secondary:hover { text-decoration: underline; }
+.hero__visual { margin: 0; padding: clamp(17px, 2.65vw, 35px); border: 1px solid #29435a; border-radius: 12px; background: var(--hero); color: var(--light); box-shadow: 0 12px 34px #101a2c1c; }
+.hero__visual figcaption { display: flex; align-items: center; gap: .65rem; font-size: .86rem; font-weight: 680; letter-spacing: .07em; color: #a6ebd4; }
+.hero__visual figcaption::before { content: ""; width: 8px; height: 8px; background: #91ebd0; border-radius: 50%; }
+.visual-demo { margin-block: 1.12rem; border-radius: 6px; border: 1px solid #40586e; padding: 1.1rem; background: repeating-linear-gradient(90deg, transparent 0 calc(20% - 1px), #a6ebd416 calc(20% - 1px) 20%), #0b1a2a; }
+.visual-demo__rail { min-height: 37px; position: relative; display: grid; grid-template-columns: repeat(6, 1fr); align-items: center; justify-items: center; isolation: isolate; }
+.visual-demo__rail::before { content: ""; z-index: -1; position: absolute; inset-inline: 8%; top: 50%; height: 1px; background: #6b8499; }
+.visual-demo__rail span { display: block; width: 8px; height: 8px; border-radius: 50%; background: #a7bed0; }
+.visual-demo__rail--ease span { background: #a6ebd4; box-shadow: 0 0 8px #6bd2ac66; }
+.visual-demo__rail--ease span:nth-child(2) { transform: translateX(-.55rem); }
+.visual-demo__rail--ease span:nth-child(3) { transform: translateX(-.78rem); }
+.visual-demo__rail--ease span:nth-child(4) { transform: translateX(.78rem); }
+.visual-demo__rail--ease span:nth-child(5) { transform: translateX(.55rem); }
+.visual-demo p { margin: 0; color: #c6d8e4; font-size: .78rem; }
+.visual-note { font-size: .92rem; line-height: 1.75; color: #cfdee9; }
+.visual-note strong { color: #a6ebd4; font-weight: 700; }
+.profile { border-block: 1px solid var(--rule); padding-block: 1.07rem; color: var(--muted); }
+.profile:empty { display: none; }
+.profile > * + *, .route-body > * + * { margin-top: .6rem; }
+.profile p { max-width: 80ch; }
+.profile ul { padding-inline-start: 1.2rem; }
+.section { padding-block: clamp(48px, 6vw, 80px); }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .35rem 1rem; }
+.section-heading h2 { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: clamp(1.75rem, 3.6vw, 2.8rem); letter-spacing: -.04em; font-weight: 800; line-height: 1.2; }
+.section-heading p { color: var(--muted); font-size: .91rem; }
+.controls { margin-block: 1.2rem 1.65rem; padding-block: .95rem; border-block: 1px solid var(--rule); }
+.filters, .search-row { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.filter { padding: .37rem .78rem; background: var(--card); border: 1px solid var(--rule); color: var(--ink); }
+.filter[aria-pressed="true"] { border-color: var(--teal); background: var(--teal-soft); color: #004b41; font-weight: 700; }
+.filter:hover, #clear-filters:hover, .copy-prompt:hover { border-color: var(--teal); }
+.search-row { margin-top: .75rem; gap: .55rem .7rem; }
+.search-row label { font-size: .88rem; font-weight: 700; }
+#term-search { width: min(100%, 390px); min-height: 43px; padding: .48rem .68rem; border-radius: 6px; border: 1px solid #a6a69d; background: var(--card); color: var(--ink); }
+#term-search::placeholder { color: #69737b; }
+#clear-filters, .copy-prompt { border: 1px solid #a6a69d; background: var(--card); padding: .4rem .72rem; color: var(--teal); font-weight: 690; }
+#result-count { min-width: 7em; margin-inline-start: auto; text-align: end; color: var(--muted); font-size: .89rem; font-variant-numeric: tabular-nums; }
+.no-results { margin-block: 1.15rem 2rem; padding: 1.05rem 1.2rem; border-left: 4px solid var(--teal); background: var(--teal-soft); }
+.card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.35rem; align-items: stretch; }
+.knowledge-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 12px; background: var(--card); overflow: hidden; }
+.card-body { display: flex; flex-direction: column; flex: 1 1 auto; gap: .75rem; padding: clamp(15px, 2.15vw, 26px); }
+.knowledge-card > :not(.card-body):not(.card-figure) { margin-inline: clamp(15px, 2.15vw, 26px); }
+.knowledge-card > :first-child:not(.card-body):not(.card-figure) { margin-top: clamp(15px, 2.15vw, 26px); }
+.knowledge-card > :last-child:not(.card-body):not(.card-figure) { margin-bottom: clamp(15px, 2.15vw, 26px); }
+.knowledge-card h3 { font-size: clamp(1.25rem, 2.1vw, 1.64rem); letter-spacing: -.03em; font-weight: 800; line-height: 1.36; overflow-wrap: anywhere; }
+.card-index { display: inline-block; align-self: flex-start; color: var(--teal); font-size: .82rem; font-weight: 760; letter-spacing: .06em; }
+.english { display: block; margin-top: .14em; font-weight: 550; font-size: .88rem; line-height: 1.45; letter-spacing: 0; color: var(--muted); }
+.card-figure { margin: 0; background: #0e1b2d; color: #eaf4fc; border-radius: 7px; overflow: hidden; }
+.knowledge-card > .card-figure { border-radius: 0; }
+.card-figure img { display: block; margin-inline: auto; width: 100%; height: auto; object-fit: contain; }
+.card-figure figcaption { border-top: 1px solid #ffffff22; color: #d5e2ec; padding: .5rem .72rem; font-size: .8rem; line-height: 1.55; }
+.card-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .38rem .77rem; margin: 0; font-size: .93rem; }
+.card-facts dt { font-weight: 750; color: var(--teal); }
+.card-facts dd { margin: 0; overflow-wrap: anywhere; }
+.card-facts > div { display: contents; }
+.card-sources { color: var(--muted); font-size: .81rem; overflow-wrap: anywhere; }
+.card-sources a { margin-inline-end: .35em; }
+.card-body .copy-prompt { align-self: flex-start; margin-top: auto; }
+.copy-prompt[aria-label] { text-align: start; }
+.card-body > :where(p, blockquote, details) { font-size: .93rem; }
+.card-body blockquote { margin: 0; border-left: 3px solid #83beab; background: #e7f0e9; padding: .5rem .75rem; }
+.card-body details { border-top: 1px solid var(--rule); padding-top: .45rem; }
+.card-body details summary { color: var(--teal); cursor: pointer; font-weight: 680; }
+.route { border-block: 1px solid var(--rule); background: #e9e9de; }
+.route-body { max-width: 92ch; margin-top: 1.2rem; }
+.route-body ol { margin: 0; padding-inline-start: 1.45em; }
+.route-body li + li { margin-top: .6rem; }
+.route-body li::marker { color: var(--teal); font-weight: 750; }
+.footer { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1.15rem 1.4rem; font-size: .86rem; color: var(--muted); }
+.copy-status { position: fixed; z-index: 3; inset: auto 1rem 1rem auto; padding: .6rem .9rem; border-radius: 6px; background: var(--ink); color: #fff; box-shadow: 0 6px 18px #101a2c33; font-size: .9rem; }
+.copy-status:empty { width: 1px; height: 1px; padding: 0; clip-path: inset(50%); }
+dialog { width: min(560px, calc(100% - 36px)); border: 1px solid var(--rule); border-radius: 9px; color: var(--ink); background: var(--card); padding: 1.1rem; }
+dialog::backdrop { background: #101a2c88; }
+dialog textarea { width: 100%; min-height: 9rem; margin-block: .5rem; resize: vertical; font: inherit; }
+dialog button { min-height: 43px; padding-inline: .7rem; }
+@media (max-width: 850px) {
+  .frame { width: min(100% - 54px, 1280px); }
+  .hero { gap: 28px; }
+  .card-grid { gap: .9rem; }
+}
+@media (max-width: 680px) {
+  .frame { width: calc(100% - 34px); }
+  .masthead { min-height: 60px; }
+  .masthead nav { gap: .8rem; }
+  .hero { grid-template-columns: 1fr; padding-block: 40px; }
+  .hero__copy h1 { max-width: 12em; }
+  .hero__summary { margin-top: .85rem; }
+  .hero__actions { margin-top: 1.15rem; }
+  .card-grid { grid-template-columns: 1fr; gap: .85rem; }
+  .search-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+  .search-row label { grid-column: 1 / -1; }
+  #term-search { width: 100%; min-width: 0; }
+  #result-count { grid-column: 1 / -1; margin: 0; text-align: start; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  :root { background: #fff; font-size: 10pt; }
+  .frame { width: 100%; }
+  .masthead, .hero__actions, .hero__visual, .controls, .footer, .copy-prompt, .copy-status, .skip, dialog { display: none !important; }
+  .hero { display: block; padding: 0 0 8pt; }
+  .hero__copy h1 { font-size: 22pt; letter-spacing: 0; }
+  .hero__summary, .profile { font-size: 10pt; }
+  .hero__summary { margin-top: 4pt; }
+  .profile { padding-block: 7pt; }
+  .section { padding-block: 10pt; }
+  .section-heading { break-after: avoid; margin-bottom: 7pt; }
+  .section-heading h2 { font-size: 15pt; }
+  .card-grid { display: block; }
+  .knowledge-card { display: block; margin-bottom: 9pt; break-inside: avoid; background: #fff; }
+  .card-body { padding: 9pt; gap: 4pt; }
+  .knowledge-card h3 { font-size: 13pt; }
+  .card-figure { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .card-figure img { max-height: 130pt; }
+  .route { background: #fff; }
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#catalog">跳到术语卡</a>
+<header class="frame masthead">
+  <a class="masthead__mark" href="#top">学习手册</a>
+  <nav aria-label="图鉴栏目">
+    <a href="#catalog">术语图鉴</a>
+    <a href="#practice">演练路线</a>
+  </nav>
+</header>
+<main>
+  <div class="frame">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__copy">
+        <h1 id="page-title"><span>视觉与专业</span><span>术语图鉴</span></h1>
+        <p class="hero__summary">先看见效果，再叫出名字，最后描述给 AI。每张卡都把一个术语对应到可观察的现象和具体用途。</p>
+        <div class="hero__actions">
+          <a class="primary" href="#catalog">打开术语图鉴</a>
+          <a class="secondary" href="#practice">按路线练习</a>
+        </div>
+      </div>
+      <figure class="hero__visual">
+        <figcaption>等间隔取样的运动轨迹</figcaption>
+        <div class="visual-demo" aria-hidden="true">
+          <p>匀速 · Linear</p>
+          <div class="visual-demo__rail"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <p>缓入缓出 · Ease-in-out</p>
+          <div class="visual-demo__rail visual-demo__rail--ease"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <p class="visual-note">看点的间距。间距大，意味着同样时间里移动更远。<strong>两端密、中间疏</strong>，就是起步和收尾更慢，中段更快。</p>
+      </figure>
+    </section>
+    <aside class="profile" aria-label="图鉴阅读说明"><!--PROFILE--></aside>
+    <section class="section" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <h2 id="catalog-title">术语图鉴</h2>
+        <p>共 <span id="declared-total"><!--TOTAL--></span> 张术语卡</p>
+      </div>
+      <div class="controls">
+        <div class="filters" role="group" aria-label="按领域筛选">
+          <button type="button" class="filter" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" class="filter" data-filter="web" aria-pressed="false">网页交互</button>
+          <button type="button" class="filter" data-filter="story" aria-pressed="false">镜头与视觉表达</button>
+          <button type="button" class="filter" data-filter="engineering" aria-pressed="false">工程</button>
+          <button type="button" class="filter" data-filter="data" aria-pressed="false">数据与图表</button>
+          <button type="button" class="filter" data-filter="workflow" aria-pressed="false">工作流</button>
+        </div>
+        <div class="search-row">
+          <label for="term-search">搜索术语</label>
+          <input id="term-search" type="search" placeholder="例如：缓动、easing、延迟" autocomplete="off" aria-controls="term-cards">
+          <button id="clear-filters" type="button">清空筛选</button>
+          <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <noscript><p>当前浏览器关闭了脚本。可通读全部术语卡，用浏览器的查找功能定位词条。</p></noscript>
+      </div>
+      <p class="no-results" id="no-results" hidden>当前领域没有匹配词条。换个关键词，或点“清空筛选”返回全部。</p>
+      <div class="card-grid" id="term-cards"><!--CARDS--></div>
+    </section>
+  </div>
+  <section class="section route" id="practice" aria-labelledby="practice-title">
+    <div class="frame">
+      <div class="section-heading"><h2 id="practice-title">演练路线</h2></div>
+      <div class="route-body"><!--ROUTE--></div>
+    </div>
+  </section>
+</main>
+<footer class="frame footer">
+  <p>单文件离线图鉴</p>
+  <a href="#top">回到页首 ↑</a>
+</footer>
+<p class="copy-status" id="copy-status" aria-live="polite" role="status"></p>
+<dialog id="manual-copy" aria-labelledby="manual-copy-title">
+  <form method="dialog">
+    <p id="manual-copy-title">请手动复制提示词</p>
+    <textarea id="manual-text" aria-label="提示词" readonly></textarea>
+    <button type="submit">关闭</button>
+  </form>
+</dialog>
+<script>
+(() => {
+  const grid = document.getElementById('term-cards');
+  const search = document.getElementById('term-search');
+  const filters = [...document.querySelectorAll('button[data-filter]')];
+  const searchStatus = document.getElementById('result-count');
+  const empty = document.getElementById('no-results');
+  const copyStatus = document.getElementById('copy-status');
+  const manual = document.getElementById('manual-copy');
+  const manualText = document.getElementById('manual-text');
+
+  const normalize = value => value.normalize('NFKC').toLowerCase().replace(/[\u2010-\u2015]/g, '-');
+  const cards = [...grid.querySelectorAll('.knowledge-card[data-category][data-keywords]')]
+    .map(element => ({
+      element,
+      category: element.dataset.category,
+      text: normalize(element.dataset.keywords + ' ' + element.textContent)
+    }));
+
+  let category = 'all';
+  let announcementTimer;
+  let searchTimer;
+
+  function matchCards() {
+    const words = normalize(search.value.trim()).split(/[\s、，,；;]+/).filter(Boolean);
+    let shown = 0;
+    for (const card of cards) {
+      const matches = (category === 'all' || card.category === category) &&
+        words.every(word => card.text.includes(word));
+      card.element.hidden = !matches;
+      if (matches) shown += 1;
+    }
+    searchStatus.textContent = '显示 ' + shown + ' / ' + cards.length + ' 张';
+    empty.hidden = shown !== 0;
+  }
+
+  function setCategory(next) {
+    category = next;
+    for (const button of filters) {
+      button.setAttribute('aria-pressed', String(button.dataset.filter === next));
+    }
+    clearTimeout(searchTimer);
+    matchCards();
+  }
+
+  for (const button of filters) {
+    button.addEventListener('click', () => setCategory(button.dataset.filter));
+  }
+
+  search.addEventListener('input', event => {
+    if (event.isComposing) return;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(matchCards, 85);
+  });
+  search.addEventListener('compositionend', matchCards);
+  search.addEventListener('search', matchCards);
+
+  document.getElementById('clear-filters').addEventListener('click', () => {
+    search.value = '';
+    setCategory('all');
+    search.focus();
+  });
+
+  function announce(message) {
+    copyStatus.textContent = message;
+    clearTimeout(announcementTimer);
+    announcementTimer = setTimeout(() => { copyStatus.textContent = ''; }, 2500);
+  }
+
+  function legacyCopy(value) {
+    const selection = document.activeElement;
+    const input = document.createElement('textarea');
+    input.value = value;
+    input.readOnly = true;
+    input.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0';
+    document.body.append(input);
+    try {
+      input.focus({ preventScroll: true });
+      input.select();
+      input.setSelectionRange(0, value.length);
+      return document.execCommand('copy');
+    } catch {
+      return false;
+    } finally {
+      input.remove();
+      if (selection instanceof HTMLElement) selection.focus({ preventScroll: true });
+    }
+  }
+
+  async function copyPrompt(value) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try {
+        await navigator.clipboard.writeText(value);
+        announce('提示词已复制');
+        return;
+      } catch {
+        // Continue with the local-document fallback.
+      }
+    }
+    if (legacyCopy(value)) {
+      announce('提示词已复制');
+      return;
+    }
+    manualText.value = value;
+    if (typeof manual.showModal === 'function') {
+      if (!manual.open) manual.showModal();
+      manualText.focus();
+      manualText.select();
+    } else {
+      window.prompt('请复制提示词', value);
+    }
+  }
+
+  grid.addEventListener('click', event => {
+    const button = event.target.closest('.copy-prompt[data-prompt]');
+    if (button && button.dataset.prompt) copyPrompt(button.dataset.prompt);
+  });
+
+  matchCards();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<style>
+.card-figure figcaption {display:flex;align-items:start;gap:.6rem;justify-content:space-between}
+.figure-zoom {flex:none;color:#a6f4dc;background:#163249;border:1px solid #42627b;border-radius:4px;padding:.18rem .43rem;font-size:.77rem;cursor:zoom-in}
+.atlas-demo button {border:1px solid #7fb09e;border-radius:5px;padding:.26rem .55rem;background:#f9fffb;color:#16564a;cursor:pointer}
+#figure-dialog {width:min(1080px,96vw);padding:0;border:1px solid #607a90;border-radius:12px;color:#edf7ff;background:#101a2c;max-height:90dvh;max-width:none}
+#figure-dialog::backdrop {background:#08111dd9}
+#figure-dialog .figure-controls {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem;padding:.65rem .8rem;border-bottom:1px solid #456078}
+#figure-dialog .figure-controls button {border:1px solid #6886a1;border-radius:5px;background:#203d53;color:white;padding:.3rem .55rem;cursor:pointer}
+#figure-dialog .zoom-pane {overflow:auto;max-height:calc(90dvh - 55px)}
+#figure-dialog img {display:block;width:100%;height:auto;min-width:0;max-width:none}
+#figure-dialog img.actual-size {width:var(--source-width)}
+@media print {.figure-zoom,#figure-dialog {display:none!important}}
+</style>
+<dialog id="figure-dialog" aria-label="效果大图">
+<div class="figure-controls"><strong id="figure-dialog-title">效果大图</strong><div>
+<button type="button" id="image-actual" aria-pressed="false">看原尺寸</button>
+<button type="button" id="image-close">关闭</button>
+</div></div>
+<div class="zoom-pane" tabindex="0" aria-label="效果图区域"><img id="image-large" alt=""></div>
+</dialog>
+<script>
+(() => {
+  const dialog = document.querySelector('#figure-dialog');
+  const image = document.querySelector('#image-large');
+  const actual = document.querySelector('#image-actual');
+  const title = document.querySelector('#figure-dialog-title');
+  function setActual(isActual) {
+    image.classList.toggle('actual-size', isActual);
+    actual.setAttribute('aria-pressed', String(isActual));
+    actual.textContent = isActual ? '适应窗口' : '看原尺寸';
+  }
+  document.querySelector('#term-cards').addEventListener('click', event => {
+    const source = event.target.closest('[data-figure-zoom]');
+    if (!source) return;
+    const original = source.closest('figure').querySelector('img');
+    const width = original.naturalWidth || original.width;
+    title.textContent = source.closest('.knowledge-card').querySelector('h3').textContent;
+    image.src = original.src;
+    image.alt = original.alt;
+    image.style.setProperty('--source-width', width + 'px');
+    setActual(false);
+    dialog.showModal();
+    document.querySelector('#image-close').focus();
+  });
+  actual.addEventListener('click', () => setActual(!image.classList.contains('actual-size')));
+  document.querySelector('#image-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => {
+    dialog.querySelector('.zoom-pane').scrollTo(0, 0);
+    image.removeAttribute('src');
+  });
+})();
+</script>

@@ -1,0 +1,4 @@
+__pycache__/
+.venv/
+v2-art/panels/
+v2-main/atlas-v2-preview.html

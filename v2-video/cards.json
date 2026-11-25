@@ -1,0 +1,183 @@
+[
+  {
+    "key": "jcut-v2",
+    "replaceKey": "jcut",
+    "category": "story",
+    "name": "J 剪接 / L 剪接（声音桥）",
+    "english": "J-cut / L-cut · Split edit",
+    "look": "双栏同在 00:04 从室内切到列车站台。J 版左声道 00:03 就先响起站台声，镜头还在室内；L 版右声道 00:04 画面已到站台，但打字声到 00:05 才退场。播放时戴耳机听左右，沿时间游标读两条轨的错位。",
+    "use": "J 剪接提前建立新场景或下一位说话者的期待，L 剪接让上一句旁白、解释或情绪跨越镜头，减少突兀的声画同切。",
+    "distinction": "J：新画面的声音先到。L：旧画面的声音继续。比较的是音轨与视频轨剪点的先后，切法本身可以依然是普通硬切。",
+    "scenario": "采访中从说话者转到听者反应；产品片先听机器运转再切设备特写；教学讲解从实验画面切到下一图表仍保留上一句收尾。",
+    "prompt": "制作两个镜头①室内打字②站台到站，共 8 秒，画面均固定在 4 秒硬切。A 版 J-cut：站台音效在 3 秒进入；B 版 L-cut：室内声音延长到 5 秒。取消剪辑链接，独立调整音频入出点，保留时间码与两轨对照，声音交接不要突发爆音。",
+    "sources": [
+      {
+        "title": "Adobe Premiere · Create J and L cuts in Premiere Pro",
+        "url": "https://helpx.adobe.com/premiere/desktop/edit-projects/trim-clips/perform-j-cuts-and-l-cuts.html",
+        "note": "实读官方定义与操作步骤：独立选择音频与画面轨，改变切点位置；可按正文练习，页面嵌入教学视频未连看。"
+      },
+      {
+        "title": "Adobe · Add J cuts and L cuts to your filmmaking toolkit",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film/l-and-j-cut.html",
+        "note": "实读声音桥及采访、场景过渡用法。先判断声音从哪场景进入，随后再移动音轨剪点。"
+      }
+    ],
+    "videoFiles": [
+      {
+        "path": "j-l-cut.mp4",
+        "caption": "原创双栏立体声教学片，8 秒。左声道 J、右声道 L；03–05 秒是关键对照。可暂停或拖动播放进度，佩戴耳机分别听左右。",
+        "marks": [
+          {
+            "label": "J：先听下一场",
+            "time": 3.2
+          },
+          {
+            "label": "L：画面换了，声音还在",
+            "time": 4.2
+          },
+          {
+            "label": "两侧都进入下一场",
+            "time": 5.2
+          }
+        ],
+        "poster": "j-l-cut-poster.png"
+      }
+    ],
+    "imageFile": "j-l-cut-poster.png"
+  },
+  {
+    "key": "match-action",
+    "category": "story",
+    "name": "动作对位剪接 / 跳切",
+    "english": "Match on action / Jump cut",
+    "look": "检测件沿导轨持续向右。左边 00:04 在运动中换到更近、更斜的镜头，琥珀标记延续同一动作相位；右边保持机位并删去原动作 4.00–5.35 秒，剪点处物件突然向前跳。",
+    "use": "动作对位让视线从空间全貌进入关键操作，保持运动方向与时间关系；跳切压缩重复动作、停顿或空闲时间，用更急促的节奏表达进展。",
+    "distinction": "动作对位可在同一动作的不同机位之间切换，关键是剪点两侧动作接得上。典型跳切保持相近机位却拿掉一段时间，让主体位置或姿态突变。跳切可作为表达时间省略的有意手法。",
+    "scenario": "装配演示从操作者中景切到工具触点特写；实验轨迹展示关键状态；口播或教程去掉无信息等待时可选择跳切，在需要展示完整因果步骤时保持动作连续。",
+    "prompt": "拍摄同一零件从导轨左端滑到右端的两个机位。A 版在动作进行中，4 秒时从中景切到近景，匹配零件位置和运动方向；B 版用同机位剪掉 1.35 秒中间过程，使位置出现可辨跳变。让两版使用一致播放时钟并标出源时间。",
+    "sources": [
+      {
+        "title": "Tom Barrance / Learn About Film · Continuity: Shoot and Edit so your Movie Makes Sense",
+        "url": "https://learnaboutfilm.com/film-language/sequence/",
+        "note": "实读 Match on action、30 degree rule 与 180 degree rule 小节及静态示范；拍同一动作的两种机位，并在动作发生期间切换。"
+      },
+      {
+        "title": "Adobe · Explore different types of cuts in film with Adobe Premiere",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film.html",
+        "note": "实读 jump cuts 的时间省略、节奏用途与回看剪接建议。"
+      }
+    ],
+    "videoFiles": [
+      {
+        "path": "match-action.mp4",
+        "caption": "原创双栏教学动画。3.97 → 4.03 秒逐帧对比，观察两边定位点和动作方向；右侧红色源时间区间是被省略的 1.35 秒。 右侧先完成并保留最后状态，以保持 8 秒比较窗口。",
+        "marks": [
+          {
+            "label": "切点前，同一位置",
+            "time": 3.93
+          },
+          {
+            "label": "切点后，观察跳跃",
+            "time": 4.07
+          },
+          {
+            "label": "跟到目标位置",
+            "time": 6
+          }
+        ],
+        "poster": "match-action-poster.png"
+      }
+    ],
+    "imageFile": "match-action-poster.png"
+  },
+  {
+    "key": "cut-dissolve",
+    "category": "story",
+    "name": "硬切与交叉叠化",
+    "english": "Hard cut / Cross dissolve",
+    "look": "同一间房从白天到夜晚：左侧 00:04 瞬间替换图像；右侧从 00:03.3 到 00:04.7 连续叠合。在 4 秒暂停会看到右侧日夜各 50% 混合，两条权重线相交。",
+    "use": "硬切适合清楚切换步骤、镜头、观点和节奏节点。交叉叠化用重叠的图像逐渐建立时间推移、回忆、地点或情绪变化。",
+    "distinction": "硬切没有图像交叠；叠化中两镜同时可见、A 权重下降同时 B 权重上升。Dip to black 是经黑色过渡，另有用途。",
+    "scenario": "实验过程连续操作用硬切推进；展览回忆或日夜时间流逝用克制的叠化。在图中文字较多或信息量密集时，需要避免重叠文字影响阅读。",
+    "prompt": "同一室内场景制作日夜两段素材。A 版在 4 秒直接硬切；B 版以 4 秒为中心做 1.4 秒交叉叠化，前后各保留足够片段余量。展示 3.3、4、4.7 秒的进度，使用透明度权重 A=1−p、B=p。",
+    "sources": [
+      {
+        "title": "Ashley Kennedy / Adobe Learn · Elevate your project with cinematic video transitions",
+        "url": "https://www.adobe.com/learn/premiere-pro/web/premiere-pro-add-transitions-cc",
+        "note": "原页含教学视频转写，实读 00:11–01:28：应用默认叠化和拖动持续时间；01:28–02:46：解释片段余量不足时的重复帧。可打开原页跟练；视频未连看。"
+      },
+      {
+        "title": "Adobe · Explore different types of cuts in film with Adobe Premiere",
+        "url": "https://www.adobe.com/creativecloud/video/post-production/cuts-in-film.html",
+        "note": "实读 straight cuts 与时间、空间、叙事节奏关系的原文。"
+      }
+    ],
+    "videoFiles": [
+      {
+        "path": "cut-dissolve.mp4",
+        "caption": "原创双栏时间过渡片。3.3 秒叠化开始，4 秒左右均到剪点，4.7 秒叠化完成。适合暂停观察 50% 叠合。纯视觉对照，静音。",
+        "marks": [
+          {
+            "label": "叠化开始",
+            "time": 3.3
+          },
+          {
+            "label": "转场中心，日夜各半",
+            "time": 4
+          },
+          {
+            "label": "叠化完成",
+            "time": 4.7
+          }
+        ],
+        "poster": "cut-dissolve-poster.png"
+      }
+    ],
+    "imageFile": "cut-dissolve-poster.png"
+  },
+  {
+    "key": "dolly-zoom-comparison",
+    "category": "story",
+    "name": "推镜与原地变焦",
+    "english": "Dolly in / Zoom in",
+    "look": "两个模拟镜头中心主体始终等大，左边真实投影机位向前移动，近处立柱膨胀得快而远处背景变化小；右边机位固定、改变模拟焦距，前中后景的画面倍率相同。6 秒以后观察主体外的两侧立柱及背景门。",
+    "use": "推镜增强进入空间、靠近人物或细节的临场感；变焦在无法物理移动或希望突然把视线集中到远处时改变取景范围。",
+    "distinction": "推镜改变摄影机与景物的实际相对空间关系，导致透视和视差改变；原地改变镜头焦距缩窄视野，透视关系仍由固定机位决定。Dolly zoom 则是同时前后移动机位且反向变焦以尽量保持主体大小，是另一种效果。",
+    "scenario": "产品视频进入设备台、展厅或建筑内部可用推镜；采访、演讲和不可进入的设备区域可用镜头变焦。3D 网页或演示中也能用相同投影规律区分 camera.position 和 field of view。",
+    "prompt": "在三维走廊中放一个主体，近处设两根柱子，远处设门。并列两台镜头：A 固定焦距，沿视轴前进 2 个空间单位；B 固定同一个机位且提高焦距。匹配两边主体尺寸的每一个时刻，保留前后景线索，让读者能比较透视区别。",
+    "sources": [
+      {
+        "title": "StudioBinder · Definitive Guide to Every Type of Camera Movement in Film",
+        "url": "https://www.studiobinder.com/blog/different-types-of-camera-movements-in-film/",
+        "note": "实读 Push-in、Zoom effect 与 Dolly Zoom 区段。文中明确区分机位靠近与焦距变化，并有电影案例链接；原嵌入视频未连看。"
+      },
+      {
+        "title": "StudioBinder · The Dolly Zoom Shot in Film — Ultimate Guide",
+        "url": "https://www.studiobinder.com/camera-shots/camera-movements/dolly-zoom-shot/",
+        "note": "实读组合移动与反向变焦的定义，避免把普通推镜/变焦的对照误称为滑动变焦。"
+      }
+    ],
+    "videoFiles": [
+      {
+        "path": "dolly-zoom.mp4",
+        "caption": "原创数学透视模拟，不是实拍。0–6.8 秒连续运动，主体每一帧尺寸匹配；6.8 秒停稳后比较近柱、背景门和倍率条。纯视觉对照，静音。",
+        "marks": [
+          {
+            "label": "相同初始取景",
+            "time": 0
+          },
+          {
+            "label": "透视逐渐分化",
+            "time": 3.7
+          },
+          {
+            "label": "主体等大，比较远近层次",
+            "time": 6.9
+          }
+        ],
+        "poster": "dolly-zoom-poster.png"
+      }
+    ],
+    "imageFile": "dolly-zoom-poster.png"
+  }
+]

@@ -1,0 +1,80 @@
+<style>
+.atlas-demo summary {font-weight:700}
+.atlas-demo > section {display:grid;gap:.5rem;margin-top:.6rem;padding:.7rem;border:1px solid #b8d5ca;background:#edf5ef;border-radius:8px}
+.atlas-demo p {font-size:.83rem;margin:0;color:#36584e}
+.atlas-demo label,.atlas-demo span {font-size:.84rem}
+.atlas-demo input[type="range"] {width:100%;margin:0;accent-color:#176353}
+.atlas-demo .sample-row {display:grid;align-items:center;grid-template-columns:4.25rem 1fr 3.5rem;gap:.5rem}
+.atlas-demo progress {width:100%;height:.75rem;accent-color:#176353}
+.atlas-demo progress.triggered {accent-color:#8f542b}
+.atlas-demo .runway {position:relative;height:20px;border-radius:12px;background:#d5e6de;overflow:hidden}
+.atlas-demo .mark {position:absolute;top:3px;left:3px;display:block;width:14px;height:14px;border-radius:50%;background:#166154}
+.atlas-demo .mark.alt {background:#995726}
+.atlas-demo button {justify-self:start}
+@media print {.atlas-demo {display:none}}
+</style>
+<script>
+(() => {
+  const slider = document.querySelector('#scroll-position');
+  if (slider) {
+    const sample = slider.closest('section');
+    const linked = sample.querySelector('#linked-progress');
+    const triggered = sample.querySelector('#triggered-progress');
+    const linkedLabel = sample.querySelector('#linked-value');
+    const triggerLabel = sample.querySelector('#triggered-value');
+    const reset = sample.querySelector('#demo-reset');
+    let started = false;
+    let frameId = 0;
+
+    function updateLinked() {
+      linked.value = slider.value;
+      linkedLabel.textContent = slider.value + '%';
+    }
+    function playTriggered() {
+      const from = performance.now();
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function frame(now) {
+        const value = reduce ? 100 : Math.min(100, Math.round((now - from) / 6));
+        triggered.value = value;
+        triggerLabel.textContent = value + '%';
+        if (value < 100) frameId = requestAnimationFrame(frame);
+      }
+      frameId = requestAnimationFrame(frame);
+    }
+    slider.addEventListener('input', () => {
+      updateLinked();
+      if (!started && Number(slider.value) >= 50) {
+        started = true;
+        playTriggered();
+      }
+    });
+    reset.addEventListener('click', () => {
+      cancelAnimationFrame(frameId);
+      started = false;
+      slider.value = '0';
+      triggered.value = 0;
+      triggerLabel.textContent = '0%';
+      updateLinked();
+    });
+  }
+
+  const play = document.querySelector('#demo-easing-play');
+  if (play) {
+    const sample = play.closest('section');
+    play.addEventListener('click', () => {
+      sample.querySelectorAll('.mark').forEach((mark, index) => {
+        mark.getAnimations().forEach(animation => animation.cancel());
+        const distance = mark.parentElement.clientWidth - 20;
+        const from = { transform: 'translateX(0px)' };
+        const to = { transform: 'translateX(' + distance + 'px)' };
+        const duration = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 800;
+        mark.animate([from, to], {
+          duration,
+          easing: index ? 'cubic-bezier(0.33, 1, 0.68, 1)' : 'linear',
+          fill: 'forwards'
+        });
+      });
+    });
+  }
+})();
+</script>

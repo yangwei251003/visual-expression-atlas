@@ -1,0 +1,171 @@
+[
+  {
+    "key": "mask-vs-fade",
+    "category": "web",
+    "name": "遮罩揭示与淡入",
+    "english": "Mask Reveal · Fade-in",
+    "look": "拖到中段，左边山景逐段露出，遮罩边缘不断向右推进，露出的内容仍然清晰。右边整张山景同时变亮。",
+    "use": "利用露出边缘引导阅读路径，建立进入画面的方向感。淡入可以柔和地显现整组元素，降低突然出现的刺激。",
+    "distinction": "本例用动画化裁剪边界实现 Reveal。Fade-in 改的是不透明度。两者可以组合，但最好明确主次。",
+    "scenario": "遮罩揭示适合作品集封面、章节标题、图片轮播开场。淡入适合辅助文字、详情状态和需要轻量出现的内容。",
+    "prompt": "同一张封面做两种1800ms对照，A用从左到右的裁剪遮罩逐段露出，露出的内容保持100%不透明度，B保持形状不变而整体淡入。两边共用一条时间轴，提供重播、暂停和拖动进度。减少动态偏好生效时保持清晰的最终状态。",
+    "sources": [
+      {
+        "title": "Emil Kowalski · Animation Vocabulary",
+        "url": "https://animations.dev/vocabulary",
+        "note": "已读 Entrances & Exits，核对 Reveal 和 Fade in 的原定义。"
+      },
+      {
+        "title": "MDN · clip-path",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path",
+        "note": "已读属性正文、示例与可见区域定义。原作者示例可切换不同裁剪路径。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-mask-vs-fade\" class=\"motion-v2\" data-motion=\"reveal\" data-duration=\"1800\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>遮罩揭示</b><span lang=\"en\">Mask reveal</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-reveal-frame\"><div class=\"mv-reveal-inner\"><div class=\"mv-screen-art\"></div><div class=\"mv-reveal-text\">NORTH / 01</div></div><i class=\"mv-cut\" aria-hidden=\"true\"></i></div></div>\n          <div class=\"mv-meter\">已露出面积</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>淡入</b><span lang=\"en\">Fade-in</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-reveal-frame\"><div class=\"mv-reveal-inner\"><div class=\"mv-screen-art\"></div><div class=\"mv-reveal-text\">NORTH / 01</div></div><i class=\"mv-cut\" aria-hidden=\"true\"></i></div></div>\n          <div class=\"mv-meter\">整张素材透明度</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        \n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">看中间帧的边界与亮度。首次播放从起点开始，暂停时拖动进度可逐帧观察。</p>\n    </div>"
+  },
+  {
+    "key": "stagger-vs-together",
+    "category": "web",
+    "name": "交错入场与同时入场",
+    "english": "Stagger · Simultaneous",
+    "look": "中途暂停时，左边四条状态卡依阅读顺序逐条出现，右边四条在同一时刻启动并完成。",
+    "use": "在有明确顺序的信息组内制造阅读节奏，让用户从上到下追随变化。逐项时差也可以突出关键流程。",
+    "distinction": "Stagger 的差异来自启动时间偏移。本例两侧单项位移、单项时长和缓动完全一致，只有错峰改变。",
+    "scenario": "适合首页功能条目、分步骤教程、菜单首次打开等。紧急报警或高频操作列表要优先及时呈现。",
+    "prompt": "设置四张状态卡，每项从下移14px且透明度0进入到原位且100%不透明，时长480ms，缓出。A按顺序每项相差135ms启动，B四项同时启动，统一1000ms对照时间轴。在首次进入时执行一次，避免滚动往返重复触发。",
+    "sources": [
+      {
+        "title": "Emil Kowalski · Animation Vocabulary",
+        "url": "https://animations.dev/vocabulary",
+        "note": "已读 Sequencing & Timing 中的 Stagger、Delay、Duration。"
+      },
+      {
+        "title": "Motion · Transitions",
+        "url": "https://motion.dev/docs/react-transitions",
+        "note": "已读 Orchestration 和 transitions 章节，核对 stagger 参数作为子项启动偏移。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-stagger-vs-together\" class=\"motion-v2\" data-motion=\"stagger\" data-duration=\"1000\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>交错入场</b><span lang=\"en\">Stagger</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-list\"><div class=\"mv-list-item\"><i>01</i><span>输入状态<em>INPUT</em></span></div><div class=\"mv-list-item\"><i>02</i><span>逻辑判断<em>LOGIC</em></span></div><div class=\"mv-list-item\"><i>03</i><span>设备反馈<em>OUTPUT</em></span></div><div class=\"mv-list-item\"><i>04</i><span>运行记录<em>EVENT</em></span></div></div></div>\n          <div class=\"mv-meter\">依序启动</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>同时入场</b><span lang=\"en\">Together</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-list\"><div class=\"mv-list-item\"><i>01</i><span>输入状态<em>INPUT</em></span></div><div class=\"mv-list-item\"><i>02</i><span>逻辑判断<em>LOGIC</em></span></div><div class=\"mv-list-item\"><i>03</i><span>设备反馈<em>OUTPUT</em></span></div><div class=\"mv-list-item\"><i>04</i><span>运行记录<em>EVENT</em></span></div></div></div>\n          <div class=\"mv-meter\">同一时刻启动</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        \n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">让进度停在 30–60%，对比哪些条目已经到位。</p>\n    </div>"
+  },
+  {
+    "key": "spring-vs-easeout",
+    "category": "web",
+    "name": "弹簧回弹与固定缓出",
+    "english": "Spring · Ease-out Tween",
+    "look": "相同起终点，两者都先加速或快速前进再停下。示例的欠阻尼弹簧会越过目标线并来回收敛，三次缓出始终未越过终点。",
+    "use": "弹簧能让短小反馈产生重量与回弹感。确定性的缓出适合需要明确到位时间和稳定感觉的状态变换。",
+    "distinction": "Spring 可以由质量、刚度、阻尼控制，其结果不一定回弹。图中专门选择有轻微过冲的欠阻尼配置。Tween 则依据既定时长及时间曲线插值。",
+    "scenario": "弹簧适合低风险的点赞、收藏、可拖动卡片回位、趣味按钮。弹窗文字和工业状态变化一般更适合快速、少过冲的曲线。",
+    "prompt": "演示一个对象从12%移动到78%。A用欠阻尼弹簧响应，轻微越过目标线后衰减稳定，B用三次缓出单调到位。为同一终点增加目标线和位移百分比，能暂停观察过冲，并提供减少动态版本。",
+    "sources": [
+      {
+        "title": "Emil Kowalski · Great Animations",
+        "url": "https://emilkowal.ski/ui/great-animations",
+        "note": "已读自然动效与快速动效讲解。原页有可调 stiffness / damping / mass 的弹簧可视化、Replay 和缓出示例。"
+      },
+      {
+        "title": "Motion · Transitions",
+        "url": "https://motion.dev/docs/react-transitions",
+        "note": "已读 Spring、Tween 等类型参数，对照弹簧的物理参数与固定时间插值。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-spring-vs-easeout\" class=\"motion-v2\" data-motion=\"spring\" data-duration=\"1650\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>欠阻尼弹簧</b><span lang=\"en\">Spring</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-track\"><div class=\"mv-goal\"><span>目标线</span></div></div><span class=\"mv-ball\"></span><div class=\"mv-track-label\"><span>起点</span><span>移动轨迹</span></div></div>\n          <div class=\"mv-meter\">朝终点移动</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>固定缓出</b><span lang=\"en\">Ease-out</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-track\"><div class=\"mv-goal\"><span>目标线</span></div></div><span class=\"mv-ball\"></span><div class=\"mv-track-label\"><span>起点</span><span>移动轨迹</span></div></div>\n          <div class=\"mv-meter\">朝终点移动</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        \n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">暂停在目标线附近，观察哪一个对象曾越过终点。这个演示特意慢放以便辨认。</p>\n    </div>"
+  },
+  {
+    "key": "parallax-vs-uniform",
+    "category": "web",
+    "name": "多层视差与同速滚动",
+    "english": "Parallax · Uniform Scroll",
+    "look": "滑杆模拟滚动位置。左边近处山脊移动得更多，中景其次，背景与月亮移动得最少。右边三层一起移动。",
+    "use": "不同深度图层产生相对位移，赋予二维页面空间感。轻微视差还可以引导用户由前景看向远景。",
+    "distinction": "滚动跟随是动画随滚动进度变化的关系。视差强调多个深度层的相对运动速度不同。同速滚动仍可由滚动驱动，但不会制造该相对位移。",
+    "scenario": "适合叙事网站、旅游或品牌首页、展厅景深、机械结构分层探索。要减小幅度并防止遮住文本，避免高频操作界面持续晃动。",
+    "prompt": "把画面前景、中景、远景拆成三个可见图层，滑杆0%到100%映射同一滚动位置。左侧分别上移62px、30px、12px，右侧统一上移34px。停止拖动时各层停在当前状态，回拖时逆向恢复。保持正文固定可读。",
+    "sources": [
+      {
+        "title": "Bramus · Scroll-driven Animations",
+        "url": "https://scroll-driven-animations.style/",
+        "note": "已读引言与公开演示目录，核对 parallax background images 和随滚动进度正向／逆向推进的关系。"
+      },
+      {
+        "title": "Bramus · Chrome for Developers · 滚动驱动的动画",
+        "url": "https://developer.chrome.com/docs/css-ui/scroll-driven-animations?hl=zh-cn",
+        "note": "已读滚动时间轴的说明与示例，适合从这里研究 scroll() 与 view()。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-parallax-vs-uniform\" class=\"motion-v2\" data-motion=\"parallax\" data-duration=\"2400\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>多层视差</b><span lang=\"en\">Parallax</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-scenery\"><div class=\"mv-layer mv-far\"></div><div class=\"mv-layer mv-mid\"></div><div class=\"mv-layer mv-near\"></div><i class=\"mv-horizon\"></i><div class=\"mv-scroll-tick\"><i></i></div></div></div>\n          <div class=\"mv-meter\">远 / 中 / 近</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>同速滚动</b><span lang=\"en\">Uniform</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-scenery\"><div class=\"mv-layer mv-far\"></div><div class=\"mv-layer mv-mid\"></div><div class=\"mv-layer mv-near\"></div><i class=\"mv-horizon\"></i><div class=\"mv-scroll-tick\"><i></i></div></div></div>\n          <div class=\"mv-meter\">远 / 中 / 近</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        \n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">拖影像的进度滑杆向右再回拖，观察每层相对位置变化。这是滚动位置模拟，不抢占当前网页滚动。</p>\n    </div>"
+  },
+  {
+    "key": "spotlight-vs-magnet",
+    "category": "web",
+    "name": "鼠标追光与磁吸按钮",
+    "english": "Pointer Spotlight · Magnetic Button",
+    "look": "白色小圆表示同步指针。左边亮斑追随它而卡片位置固定，右边的按钮实体沿指针方向偏移，虚线表示原位。",
+    "use": "追光在内容内部制造局部焦点和材质质感，保留界面结构。磁吸强调控件对靠近的指针有反应，给人轻微的物理拉力感觉。",
+    "distinction": "Spotlight 变的是光斑位置和明暗，Magnetic 改的是对象位置。两者在代码中常使用同一个鼠标坐标来源，却是不同的设计决策。",
+    "scenario": "适合作品集封面、低频品牌 CTA、精选功能卡片。主导航与频繁使用的输入表单宜保持目标稳定，触屏与键盘需要仍可正常操作。",
+    "prompt": "给两块等大的区域同步模拟指针位置。A仅更新光斑的 CSS radial-gradient 中心，卡片位置不变，B使按钮向指针偏移、X最多20px且Y最多17px，保留虚线原位。允许真实 pointermove、触屏点击和方向键，也提供轨迹播放及复位。",
+    "sources": [
+      {
+        "title": "Codrops · MagneticButtons 原作者示例仓库",
+        "url": "https://github.com/codrops/MagneticButtons",
+        "note": "已读公开仓库 README，作者说明是一组磁吸交互与 hover 动画按钮，包含在线 demo 入口。原文章入口本次返回403，故用原仓库学习机制。"
+      },
+      {
+        "title": "MDN · radial-gradient()",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient",
+        "note": "已读径向渐变语法与可指定中心位置。图中的动态中心与按钮位移是本图鉴原创对照。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-spotlight-vs-magnet\" class=\"motion-v2\" data-motion=\"pointer\" data-duration=\"3200\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>局部追光</b><span lang=\"en\">Spotlight</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-pointer-zone\" tabindex=\"0\" aria-label=\"在区域移动指针或按方向键\"><div class=\"mv-pointer-grid\"></div><div class=\"mv-pointer-card\"><span class=\"mv-pointer-glow\"></span><span class=\"mv-icon\" aria-hidden=\"true\">✦</span><b>作品入口</b></div><i class=\"mv-pointer-dot\"></i></div></div>\n          <div class=\"mv-meter\">按钮保持原位</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>磁吸按钮</b><span lang=\"en\">Magnetic</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-pointer-zone\" tabindex=\"0\" aria-label=\"在区域移动指针或按方向键\"><div class=\"mv-magnet-anchor\"></div><div class=\"mv-magnet\">作品入口</div><i class=\"mv-pointer-dot\"></i></div></div>\n          <div class=\"mv-meter\">按钮随指针偏移</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        \n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">可把鼠标移入任意一侧同步比较。触屏点按区域，键盘聚焦后使用方向键也能移动白色指针。</p>\n    </div>"
+  },
+  {
+    "key": "shared-vs-crossfade",
+    "category": "web",
+    "name": "共享元素转场与交叉淡化",
+    "english": "Shared Element · Crossfade",
+    "look": "暂停在画面中间时，左边只有一个连续移动、放大的山景封面。右边缩略图和详情图处于两个固定位置，透明度逐渐交接。",
+    "use": "用同一可追踪的视觉对象串联列表和详情，帮助用户理解空间关系。交叉淡化则提供轻量视图切换，适用于内容无共享位置或无需表达导航空间时。",
+    "distinction": "共享元素转场包含身份、位置或尺寸的连续性；Crossfade 通过旧的与新的两层不透明度交换完成切换。两种方法都可以搭配其他文字变化。",
+    "scenario": "列表到详情、作品集封面展开、设备模型预览进入详情适合共享元素。标签内容切换、无共同对象的页面切换适合交叉淡化。",
+    "prompt": "展示同一封面从列表缩略图进入详情页。A保持封面唯一且连续改变位置、尺寸和圆角，其余内容渐变切换。B把旧列表与新详情固定在各自位置，交叉淡化。共用同样的时长和进度控制；关闭时可反向回到原位置。",
+    "sources": [
+      {
+        "title": "Emil Kowalski · Animation Vocabulary",
+        "url": "https://animations.dev/vocabulary",
+        "note": "已读 Transitions Between States：Shared element transition / Crossfade / Continuity transition。"
+      },
+      {
+        "title": "Chrome for Developers · Same-document view transitions",
+        "url": "https://developer.chrome.com/docs/web-platform/view-transitions/same-document",
+        "note": "已读 Transition multiple elements 和 Transitioning elements do not need to be the same DOM element；原页带缩略图进入主图的演示与源码。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-shared-vs-crossfade\" class=\"motion-v2\" data-motion=\"shared\" data-duration=\"1800\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>共享元素</b><span lang=\"en\">Shared element</span></div>\n          <div class=\"mv-stage\">\n      <div class=\"mv-layout\">\n        <div class=\"mv-layout-old\"><div class=\"mv-mini-bar\">精选作品</div><div class=\"mv-mini-search\"></div><div class=\"mv-mini-lines mv-old-lines\"><i></i><i></i><i></i></div></div>\n        <div class=\"mv-layout-new\"><div class=\"mv-mini-bar\">‹ 作品详情</div><div class=\"mv-mini-search\"></div><div class=\"mv-mini-lines mv-new-lines\"><i></i><i></i><i></i></div></div>\n        <div class=\"mv-screen-art mv-layout-fly\"></div>\n      </div></div>\n          <div class=\"mv-meter\">同一元素位置/尺寸连续</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>交叉淡化</b><span lang=\"en\">Crossfade</span></div>\n          <div class=\"mv-stage\">\n      <div class=\"mv-layout\">\n        <div class=\"mv-layout-old\"><div class=\"mv-mini-bar\">精选作品</div><div class=\"mv-mini-search\"></div><div class=\"mv-screen-art mv-layout-thumb\"></div><div class=\"mv-mini-lines mv-old-lines\"><i></i><i></i><i></i></div></div>\n        <div class=\"mv-layout-new\"><div class=\"mv-mini-bar\">‹ 作品详情</div><div class=\"mv-mini-search\"></div><div class=\"mv-screen-art mv-layout-hero\"></div><div class=\"mv-mini-lines mv-new-lines\"><i></i><i></i><i></i></div></div>\n        \n      </div></div>\n          <div class=\"mv-meter\">旧图透明度↓，新图透明度↑</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        <button type=\"button\" class=\"mv-action\">打开详情</button>\n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">点击“打开详情”从起点播放。请暂停在50%，再把进度回拖至原列表。</p>\n    </div>",
+    "replaceKey": "shared"
+  },
+  {
+    "key": "feedback-states",
+    "category": "web",
+    "name": "即时按压反馈与延迟反馈",
+    "english": "Microinteraction · Press Feedback",
+    "look": "点击下方模拟保存。两边都在同一时刻收到成功结果，左边先缩小回位、扩散触点高光并显示处理中；右边在等待时按钮保持原样，直到完成才更新。",
+    "use": "将“系统收到操作”与“任务最终成功”用不同视觉状态表达，减少重复点击和不确定感。按压反馈应贴合当前操作。",
+    "distinction": "动作反馈表明点击已接收。处理状态表示任务未完成。成功提示必须等待真实结果，失败也应有明确路径。",
+    "scenario": "适合表单提交、保存、导出、快速操作确认。本例是纯演示；真实危险操作仍需遵守其确认机制与联锁，不能仅靠色彩或动画传达状态。",
+    "prompt": "为示例保存按钮设计空闲、已按压、处理中、成功/失败状态。点击后立即短暂缩放至94%，同时显示处理中；收到真实成功结果后切换为已保存。对照版等到相同完成时间才改变按钮。避免把触点反馈误写成结果已成功。",
+    "sources": [
+      {
+        "title": "Google · Material motion",
+        "url": "https://m1.material.io/motion/material-motion.html",
+        "note": "已读 Responsive 与 Why does motion matter，包含触点扩散、精确回应用户操作、状态层级与反馈。"
+      },
+      {
+        "title": "Emil Kowalski · Great Animations",
+        "url": "https://emilkowal.ski/ui/great-animations",
+        "note": "已读 Great animations are fast 和 Great animations have a purpose，核对响应速度与状态变化的用意。"
+      }
+    ],
+    "demoHtml": "<div id=\"demo-v2-feedback-states\" class=\"motion-v2\" data-motion=\"feedback\" data-duration=\"2000\" role=\"group\" aria-label=\"效果对照，可控播放器\">\n      <p class=\"mv-kicker\">同一进度 · 左右对照</p>\n      <div class=\"mv-compare\">\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>即时动作反馈</b><span lang=\"en\">Immediate</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-feedback-center\"><div class=\"mv-fake-button\"><i class=\"mv-ripple\"></i><span>保存</span></div><span class=\"mv-status\">等待操作</span><div class=\"mv-confirm-panel\"><b>✓</b> 保存成功</div></div></div>\n          <div class=\"mv-meter\">按压、处理中与完成</div>\n        </section>\n        <section class=\"mv-pane\">\n          <div class=\"mv-label\"><b>延迟反馈</b><span lang=\"en\">Delayed</span></div>\n          <div class=\"mv-stage\"><div class=\"mv-feedback-center\"><div class=\"mv-fake-button\"><i class=\"mv-ripple\"></i><span>保存</span></div><span class=\"mv-status\">等待操作</span><div class=\"mv-confirm-panel\"><b>✓</b> 保存成功</div></div></div>\n          <div class=\"mv-meter\">只在完成时显示结果</div>\n        </section></div>\n      <div class=\"mv-controls\">\n        <button type=\"button\" data-mv-action=\"play\">播放</button>\n        <button type=\"button\" data-mv-action=\"pause\" disabled>暂停</button>\n        <button type=\"button\" data-mv-action=\"reset\">回到起点</button>\n        <button type=\"button\" class=\"mv-action\">模拟保存</button>\n        <label class=\"mv-scrubber\"><span>进度</span>\n          <input class=\"mv-range\" type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"两种效果的同步进度\">\n          <output class=\"mv-output\">35%</output>\n        </label>\n      </div>\n      <p class=\"mv-caption\">先模拟保存，再暂停在 20–60%。两侧任务完成时间相同，比较等待期间你能知道什么。</p>\n    </div>"
+  }
+]
